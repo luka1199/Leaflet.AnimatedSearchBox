@@ -1,0 +1,22 @@
+{
+  "name": "leaflet.animatedsearchbox",
+  "version": "1.0.0",
+  "description": "An animated search box plugin for Leaflet",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luka1199/Leaflet.AnimatedSearchbox.git"
+  },
+  "author": "Luka Steinbach (https://github.com/luka1199)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luka1199/Leaflet.AnimatedSearchbox/issues"
+  },
+  "homepage": "https://github.com/luka1199/Leaflet.AnimatedSearchbox#readme"
+}
