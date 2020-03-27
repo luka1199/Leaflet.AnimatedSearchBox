@@ -3,7 +3,7 @@
 
 Provides a simple and animated search box plugin for Leaflet.
 
-![demo](assets/demo_500px.gif)
+![demo](assets/demo_800px.gif)
 
 ## Usage 
 
