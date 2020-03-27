@@ -3,7 +3,7 @@
 
 An animated search box plugin for Leaflet.
 
-[Check out the demo](https://luka1199.github.io/Leaflet.AnimatedSearchbox/)
+[Check out the demo](https://luka1199.github.io/Leaflet.AnimatedSearchbox/examples)
 
 ## Usage 
 
