@@ -18,7 +18,6 @@
 
 .leaflet-searchbox-container .leaflet-searchbox {
     width: 300px;
-    padding: 0px 15px;
     font-size: 17px;
     transition-delay: 0.2s;
 }
@@ -27,17 +26,18 @@
     border-top-left-radius: 20px 50%;
     border-bottom-left-radius: 20px 50%;
     border-right: none;
+    padding: 0px 0px 0px 15px;
 }
 
 .leaflet-searchbox-container .leaflet-searchbox-right {
     border-top-right-radius: 20px 50%;
     border-bottom-right-radius: 20px 50%;
     border-left: none;
+    padding: 0px 15px 0px 0px;
 }
 
 .leaflet-searchbox-container .leaflet-searchbox-button {
     width: 40px;
-    padding: 0;
     transition-delay: 0s;
 }
 
