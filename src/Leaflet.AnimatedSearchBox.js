@@ -14,9 +14,10 @@
         window.L.YourPlugin = factory(L);
     }
 }(function (L) {
-    L.Control.searchbox = L.Control.extend({
+    L.Control.Searchbox = L.Control.extend({
         options: {
             class: '',
+            id: '',
             position: 'topright',
             expand: 'left',
             collapsed: true
@@ -80,6 +81,10 @@
             
             return this;
         },
+
+        isCollapsed: function () {
+            return L.DomUtil.hasClass(this._container, "collapsed")
+        },
         
         clear: function () {
             this._input.value = '';
@@ -133,6 +138,9 @@
             if (this.options.class != '') {
                 L.DomUtil.addClass(this._container, this.options.class);
             }
+            if (this.options.id != '') {
+                this._container.id = this.options.id;
+            }
 
             if (this.options.expand == 'left') {
                 this._createInput('left');
@@ -166,9 +174,9 @@
         }
     });
 
-    return L.Control.searchbox;
+    return L.Control.Searchbox;
 }, window));
 
 L.control.searchbox = function (options) {
-    return new L.Control.searchbox(options);
+    return new L.Control.Searchbox(options);
 }
