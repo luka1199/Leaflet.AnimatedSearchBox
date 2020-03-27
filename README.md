@@ -37,12 +37,12 @@ var searchbox = L.control.searchbox({
 
 ### Options
 
-`position`: Sets the position of the searchbox (Default: `'topright'`).  
-`expand`: Sets the direction in which the search box expands. (Default: `'left'`).  
-`collapsed`: Sets the initial state of the searchbox (Default: `false`).  
-`id`: Sets the id of the container of the searchbox.  
-`class`: Adds custom classes to the container of the searchbox.  
-`width`: Sets the width of the input field of the searchbox. (Example: `'450px'`)
+- `position`: Sets the position of the searchbox (Default: `'topright'`).  
+- `expand`: Sets the direction in which the search box expands. (Default: `'left'`).  
+- `collapsed`: Sets the initial state of the searchbox (Default: `false`).  
+- `id`: Sets the id of the container of the searchbox.  
+- `class`: Adds custom classes to the container of the searchbox.  
+- `width`: Sets the width of the input field of the searchbox. (Example: `'450px'`)
 
 ### Methods
 
