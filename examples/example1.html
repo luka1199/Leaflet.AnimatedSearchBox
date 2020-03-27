@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Leaflet.AnimatedSearchBox Example</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+            integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+            crossorigin="" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="../src/Leaflet.AnimatedSearchBox.css">
+        <style>
+            html, body, #map {
+                margin: 0px;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
+        <script src="../src/Leaflet.AnimatedSearchBox.js"></script>
+    </head>
+    <body>
+        <div id="map" style="width:100%;height:100%;"></div>
+        <script>
+            var map = L.map('map', {
+                zoomControl: false
+            }).setView([51.505, -0.09], 5);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+            var searchbox = L.control.searchbox({
+                position: 'topright',
+                expand: 'left'
+            }).addTo(map);
+
+            searchbox.onInput("keyup", function (e) {
+                if (e.keyCode == 13) {
+                    setTimeout(function () {
+                        searchbox.hide();
+                    }, 600);
+                }
+            });
+
+            searchbox.onButton("click", function () {
+                setTimeout(function () {
+                    searchbox.hide();
+                }, 600);
+            });
+
+        </script>
+    </body>
+</html>
