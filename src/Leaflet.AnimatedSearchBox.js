@@ -20,7 +20,8 @@
             id: '',
             position: 'topright',
             expand: 'left',
-            collapsed: true
+            collapsed: true,
+            width: null
         },
         
         onAdd: function (map) {
@@ -157,8 +158,9 @@
                 'leaflet-searchbox leaflet-searchbox-' + position, 
                 this._container);
             this._input.setAttribute('type', 'text');
-            this._input.style.width = this.options.width;
-            this._input.style.height = this.options.height;
+            if (this.options.width != null) {
+                this._input.style.width = this.options.width;
+            }
         },
 
         _createButton: function (position) {

@@ -58,7 +58,7 @@
 }
 
 .collapsed>.leaflet-searchbox {
-    width: 0px;
+    width: 0px !important;
     padding: 0px;
     transition-delay: 0s;
 }
