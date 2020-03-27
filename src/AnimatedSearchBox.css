@@ -1,0 +1,55 @@
+.leaflet-searchbar-container {
+    display: flex;
+    justify-content: right;
+    border-top-left-radius: 20px 50%;
+    border-bottom-left-radius: 20px 50%;
+    border-top-right-radius: 20px 50%;
+    border-bottom-right-radius: 20px 50%;
+}
+
+.leaflet-searchbar-container .leaflet-searchbar,
+.leaflet-searchbar-container .leaflet-searchbar-button {
+    background-color: white;    
+    border: 1px rgb(0, 0, 0, 0.3) solid;
+    outline: none;
+    transition-duration: 0.2s;
+}
+
+.leaflet-searchbar-container .leaflet-searchbar {
+    width: 300px;
+    height: 40px;
+    padding: 3% 5%;
+    font-size: 150%;
+    border-top-left-radius: 20px 50%;
+    border-bottom-left-radius: 20px 50%;
+    border-right: none;
+    transition-delay: 0.2s;
+}
+
+.leaflet-searchbar-container .leaflet-searchbar-button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-top-right-radius: 20px 50%;
+    border-bottom-right-radius: 20px 50%;
+    border-left: none;
+    transition-delay: 0s;
+}
+
+.leaflet-searchbar-container .leaflet-searchbar-button i {
+    font-size: 130%;
+}
+
+.collapsed>.leaflet-searchbar {
+    width: 0px;
+    padding: 0px;
+    border-left: none;
+    border-left: none;
+    transition-delay: 0s;
+}
+
+.collapsed>.leaflet-searchbar-button {
+    border-radius: 50%;
+    transition-delay: 0.2s;
+    border: 1px rgb(0, 0, 0, 0.3) solid;
+}
