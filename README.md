@@ -8,14 +8,16 @@ A simple Leaflet plugin that provides a collapsible search box.
 
 ## Usage
 
-Include the `Google Icons` stylesheet and the `Leaflet.AnimatedSearchBox.css` file in the head section of your document:
+Include the `Google Icons` stylesheet and the [`Leaflet.AnimatedSearchBox.css`](https://github.com/luka1199/Leaflet.AnimatedSearchBox/releases/latest/download/Leaflet.AnimatedSearchBox.css
+) file in the head section of your document:
 
 ```html
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="src/AnimatedSearchBox.css" rel="stylesheet">
 ```
 
-Include the `Leaflet.AnimatedSearchBox.js` file in your document:
+Include the [`Leaflet.AnimatedSearchBox.js`](https://github.com/luka1199/Leaflet.AnimatedSearchBox/releases/latest/download/Leaflet.AnimatedSearchBox.js
+) file in your document:
 
 ```html
 <script src="src/AnimatedSearchBox.css"></script>
