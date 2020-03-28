@@ -1,6 +1,7 @@
 # Leaflet.AnimatedSearchBox
 
-![Leaflet 1.0 compatible!](https://img.shields.io/badge/Leaflet%201.0-%E2%9C%93-1EB300.svg?style=flat)  
+![Leaflet 1.0 compatible!](https://img.shields.io/badge/Leaflet%201.0-%E2%9C%93-1EB300.svg?style=flat)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/luka1199/Leaflet.AnimatedSearchBox)
 
 A simple Leaflet plugin that provides a collapsible search box.
 
