@@ -96,4 +96,5 @@ searchbox.offButton(event, handler);
 ## Planned features
 
 - A drop-down list to easily implement autocomplete
+- Alternatives for icon
 - Support for npm etc.
