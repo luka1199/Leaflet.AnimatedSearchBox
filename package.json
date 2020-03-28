@@ -1,6 +1,6 @@
 {
   "name": "leaflet.animatedsearchbox",
-  "version": "1.0.0",
+  "version": "1.0",
   "description": "An animated search box plugin for Leaflet",
   "main": "index.js",
   "directories": {
