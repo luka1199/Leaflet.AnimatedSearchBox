@@ -41,6 +41,10 @@
     transition-delay: 0s;
 }
 
+.leaflet-searchbox-container .leaflet-searchbox-button:hover {
+    cursor: pointer;
+}
+
 .leaflet-searchbox-container .leaflet-searchbox-button-right {
     border-top-right-radius: 20px 50%;
     border-bottom-right-radius: 20px 50%;
