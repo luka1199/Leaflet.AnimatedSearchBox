@@ -49,7 +49,7 @@ var searchbox = L.control.searchbox({
 - `iconPath`: Sets the path for the search icon (Default: `img/search_icon.png`).
 - `dropDownFeatures`: Activates the given features (Default: `[]`).  
 Possible features:
-  - `'setValueOnClick'`: Set the value of the searchbox to the value of the clicked drop down list item.
+  - `'setValueOnClick'`: Set the value of the searchbox to the value of the clicked drop-down list item.
   - `'arrowKeyNavigation'`: Coming soon
   - `'setValueOnHover'`: Coming soon
   - `'setValueOnEnter'`: Coming soon
@@ -75,22 +75,22 @@ searchbox.getValue()
 // Sets the value of the text field of the search box
 searchbox.setValue(value)
 
-// Adds an item to the drop down list
+// Adds an item to the drop-down list
 searchbox.addItem(item)
 
-// Adds items to the drop down list
+// Adds items to the drop-down list
 searchbox.addItems(items)
 
-// Sets items of the drop down list
+// Sets items of the drop-down list
 searchbox.setItems(items)
 
-// Clears the drop down list
+// Clears the drop-down list
 searchbox.clearItems()
 
 // Clears the text field of the search box
 searchbox.clearInput()
 
-// Clears the text field and the drop down list of the search box
+// Clears the text field and the drop-down list of the search box
 searchbox.clear()
 
 // Adds a listener function (handler) to a particular DOM event (event)
@@ -110,16 +110,16 @@ searchbox.onButton(event, handler);
 searchbox.offButton(event, handler);
 
 // Adds a listener function (handler) to a particular DOM event (event)
-// of the drop down list
+// of the drop-down list
 searchbox.onDropDown(event, handler);
 
 // Removes a previously added listener function (handler) of a particular DOM event (event)
-// from the drop down list
+// from the drop-down list
 searchbox.offDropDown(event, handler);
 
 ```
 
 ## Planned features
 
-- More drop down features
+- More drop-down features
 - Support for npm etc.
