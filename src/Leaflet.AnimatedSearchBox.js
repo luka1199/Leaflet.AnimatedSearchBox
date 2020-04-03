@@ -23,7 +23,7 @@
             collapsed: true,
             width: null,
             iconPath: 'img/search_icon.png',
-            dropDownFeatures: ['setValueOnClick']
+            autocompleteFeatures: ['setValueOnClick']
         },
 
         onAdd: function (map) {
@@ -38,9 +38,9 @@
 
             L.DomEvent.on(this._button, 'click', this._onClick, this);
 
-            // Dropdown behaviour
-            if (this.options.dropDownFeatures.includes('setValueOnClick')) {
-                this.onDropDown('click', function (e) {
+            // Autocomplete behaviour
+            if (this.options.autocompleteFeatures.includes('setValueOnClick')) {
+                this.onAutocomplete('click', function (e) {
                     this._onListItemClick(e.target);
                 });
             }
@@ -63,7 +63,7 @@
         },
 
         addItem: function (item) {
-            var listItem = L.DomUtil.create('li', 'leaflet-searchbox-dropdown-item', this._dropDown);
+            var listItem = L.DomUtil.create('li', 'leaflet-searchbox-autocomplete-item', this._autocomplete);
             listItem.textContent = item;
             this._items.push(listItem);
 
@@ -88,7 +88,7 @@
         },
 
         clearItems: function () {
-            this._dropDown.innerHTML = '';
+            this._autocomplete.innerHTML = '';
             this._items = [];
 
             L.DomUtil.removeClass(this._searchboxWrapper, 'open');
@@ -169,14 +169,14 @@
             return this
         },
 
-        onDropDown: function (event, handler) {
-            L.DomEvent.on(this._dropDown, event, handler, this);
+        onAutocomplete: function (event, handler) {
+            L.DomEvent.on(this._autocomplete, event, handler, this);
 
             return this
         },
 
-        offDropDown: function (event, handler) {
-            L.DomEvent.off(this._dropDown, event, handler, this);
+        offAutocomplete: function (event, handler) {
+            L.DomEvent.off(this._autocomplete, event, handler, this);
 
             return this
         },
@@ -219,7 +219,7 @@
                 this._createButton('left');
                 this._createInput('right');
             }
-            this._createDropDown();
+            this._createAutocomplete();
         },
 
         _createInput: function (position) {
@@ -245,10 +245,10 @@
             this._icon.setAttribute('src', this.options.iconPath);
         },
 
-        _createDropDown: function () {
-            this._dropDown = L.DomUtil.create(
+        _createAutocomplete: function () {
+            this._autocomplete = L.DomUtil.create(
                 'ul',
-                'leaflet-searchbox-dropdown', 
+                'leaflet-searchbox-autocomplete', 
                 this._container);
 
             this._items = [];

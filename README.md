@@ -47,9 +47,9 @@ var searchbox = L.control.searchbox({
 - `class`: Adds custom classes to the container of the searchbox.  
 - `width`: Sets the width of the input field of the searchbox. (Example: `'450px'`)
 - `iconPath`: Sets the path for the search icon (Default: `img/search_icon.png`).
-- `dropDownFeatures`: Activates the given features (Default: `[]`).  
+- `autocompleteFeatures`: Activates the given features (Default: `[]`).  
 Possible features:
-  - `'setValueOnClick'`: Set the value of the searchbox to the value of the clicked drop-down list item.
+  - `'setValueOnClick'`: Set the value of the searchbox to the value of the clicked autocomplete list item.
   - `'arrowKeyNavigation'`: Coming soon
   - `'setValueOnHover'`: Coming soon
   - `'setValueOnEnter'`: Coming soon
@@ -75,22 +75,22 @@ searchbox.getValue()
 // Sets the value of the text field of the search box
 searchbox.setValue(value)
 
-// Adds an item to the drop-down list
+// Adds an item to the autocomplete list
 searchbox.addItem(item)
 
-// Adds items to the drop-down list
+// Adds items to the autocomplete list
 searchbox.addItems(items)
 
-// Sets items of the drop-down list
+// Sets items of the autocomplete list
 searchbox.setItems(items)
 
-// Clears the drop-down list
+// Clears the autocomplete list
 searchbox.clearItems()
 
 // Clears the text field of the search box
 searchbox.clearInput()
 
-// Clears the text field and the drop-down list of the search box
+// Clears the text field and the autocomplete list of the search box
 searchbox.clear()
 
 // Adds a listener function (handler) to a particular DOM event (event)
@@ -110,16 +110,16 @@ searchbox.onButton(event, handler);
 searchbox.offButton(event, handler);
 
 // Adds a listener function (handler) to a particular DOM event (event)
-// of the drop-down list
-searchbox.onDropDown(event, handler);
+// of the autocomplete list
+searchbox.onAutocomplete(event, handler);
 
 // Removes a previously added listener function (handler) of a particular DOM event (event)
-// from the drop-down list
-searchbox.offDropDown(event, handler);
+// from the autocomplete list
+searchbox.offAutocomplete(event, handler);
 
 ```
 
 ## Planned features
 
-- More drop-down features
+- More autocomplete features
 - Support for npm etc.

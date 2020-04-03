@@ -10,8 +10,8 @@
 
 .leaflet-searchbox-wrapper .leaflet-searchbox,
 .leaflet-searchbox-wrapper .leaflet-searchbox-button,
-.leaflet-searchbox-container .leaflet-searchbox-dropdown,
-.leaflet-searchbox-dropdown .leaflet-searchbox-dropdown-item {
+.leaflet-searchbox-container .leaflet-searchbox-autocomplete,
+.leaflet-searchbox-autocomplete .leaflet-searchbox-autocomplete-item {
     background-color: white;    
     border: 1px rgb(0, 0, 0, 0.3) solid;
     outline: none;
@@ -70,7 +70,7 @@
     height: auto;
 }
 
-.leaflet-searchbox-container .leaflet-searchbox-dropdown {
+.leaflet-searchbox-container .leaflet-searchbox-autocomplete {
     position: absolute;
     top: 20px;
     width: 100%;
@@ -82,11 +82,11 @@
     z-index: 701;
 }
 
-.leaflet-searchbox-container .leaflet-searchbox-dropdown:empty {
+.leaflet-searchbox-container .leaflet-searchbox-autocomplete:empty {
     display: none;
 }
 
-.leaflet-searchbox-dropdown .leaflet-searchbox-dropdown-item {
+.leaflet-searchbox-autocomplete .leaflet-searchbox-autocomplete-item {
     width: 100%;
     border-left: none;
     border-right: none;
@@ -97,7 +97,7 @@
     cursor: pointer;
 }
 
-.leaflet-searchbox-dropdown .leaflet-searchbox-dropdown-item:hover {
+.leaflet-searchbox-autocomplete .leaflet-searchbox-autocomplete-item:hover {
     background-color: #f3f3f3;
 }
 
@@ -118,7 +118,7 @@
     border: 1px rgb(0, 0, 0, 0.3) solid;
 }
 
-.collapsed .leaflet-searchbox-dropdown {
+.collapsed .leaflet-searchbox-autocomplete {
     display: none;
 }
 
