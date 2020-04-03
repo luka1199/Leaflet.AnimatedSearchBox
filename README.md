@@ -73,10 +73,10 @@ searchbox.setValue(value)
 searchbox.addAutocompleteOption(option)
 
 // Adds options to the autocomplete list
-searchbox.addAutocompleteOption(options)
+searchbox.addAutocompleteOptions(options)
 
 // Sets options of the autocomplete list
-searchbox.setAutocompleteOption(options)
+searchbox.setAutocompleteOptions(options)
 
 // Clears the autocomplete list
 searchbox.clearAutocomplete()
