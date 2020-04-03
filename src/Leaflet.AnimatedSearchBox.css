@@ -48,17 +48,22 @@
 .leaflet-searchbox-container .leaflet-searchbox-button-right {
     border-top-right-radius: 20px 50%;
     border-bottom-right-radius: 20px 50%;
-    border-left: none;
+    border-left: 1px solid #ffffff00;
 }
 
 .leaflet-searchbox-container .leaflet-searchbox-button-left {
     border-top-left-radius: 20px 50%;
     border-bottom-left-radius: 20px 50%;
-    border-right: none;
+    border-right: 1px solid #ffffff00;
 }
 
 .leaflet-searchbox-container .leaflet-searchbox-button i {
     font-size: 130%;
+}
+
+.leaflet-searchbox-container .leaflet-searchbox-icon {
+    width: 69%;
+    height: auto;
 }
 
 .collapsed>.leaflet-searchbox {
@@ -77,3 +82,4 @@
     transition-delay: 0.2s;
     border: 1px rgb(0, 0, 0, 0.3) solid;
 }
+

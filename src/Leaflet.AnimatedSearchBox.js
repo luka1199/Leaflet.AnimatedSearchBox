@@ -21,7 +21,8 @@
             position: 'topright',
             expand: 'left',
             collapsed: true,
-            width: null
+            width: null,
+            iconPath: 'img/search_icon.png'
         },
         
         onAdd: function (map) {
@@ -150,6 +151,7 @@
                 this._createButton('left');
                 this._createInput('right');
             }
+            // this._createDropDown();
         },
 
         _createInput: function (position) {
@@ -171,8 +173,12 @@
             this._button.setAttribute('type', 'button');
             this._button.style.width = this.options.height;
             this._button.style.height = this.options.height;
-            this._icon = L.DomUtil.create('i', 'material-icons', this._button);
-            this._icon.innerHTML = 'search';
+            this._icon = L.DomUtil.create('img', 'leaflet-searchbox-icon', this._button);
+            this._icon.setAttribute('src', this.options.iconPath);
+        },
+
+        _createDropDown: function () {
+
         }
     });
 
