@@ -121,5 +121,5 @@ searchbox.offDropDown(event, handler);
 
 ## Planned features
 
-- A drop-down list to easily implement autocomplete
+- More drop down features
 - Support for npm etc.
