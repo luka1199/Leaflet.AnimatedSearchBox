@@ -46,6 +46,13 @@ var searchbox = L.control.searchbox({
 - `id`: Sets the id of the container of the searchbox.  
 - `class`: Adds custom classes to the container of the searchbox.  
 - `width`: Sets the width of the input field of the searchbox. (Example: `'450px'`)
+- `iconPath`: Sets the path for the search icon (Default: `img/search_icon.png`).
+- `dropDownFeatures`: Activates the given features (Default: `[]`).  
+Possible features:
+  - `'setValueOnClick'`: Set the value of the searchbox to the value of the clicked drop down list item.
+  - `'arrowKeyNavigation'`: Coming soon
+  - `'setValueOnHover'`: Coming soon
+  - `'setValueOnEnter'`: Coming soon
 
 ### Methods
 
@@ -68,10 +75,25 @@ searchbox.getValue()
 // Sets the value of the text field of the search box
 searchbox.setValue(value)
 
+// Adds an item to the drop down list
+searchbox.addItem(item)
+
+// Adds items to the drop down list
+searchbox.addItems(items)
+
+// Sets items of the drop down list
+searchbox.setItems(items)
+
+// Clears the drop down list
+searchbox.clearItems()
+
 // Clears the text field of the search box
+searchbox.clearInput()
+
+// Clears the text field and the drop down list of the search box
 searchbox.clear()
 
-// Adds a listener function (handler) to a particular DOM event (event) 
+// Adds a listener function (handler) to a particular DOM event (event)
 // of the input field of the searchbox
 searchbox.onInput(event, handler);
 
@@ -79,13 +101,21 @@ searchbox.onInput(event, handler);
 // from the input field of the searchbox
 searchbox.offInput(event, handler);
 
-// Adds a listener function (handler) to a particular DOM event (event) 
+// Adds a listener function (handler) to a particular DOM event (event)
 // of the button of the searchbox
 searchbox.onButton(event, handler);
 
 // Removes a previously added listener function (handler) of a particular DOM event (event)
 // from the button of the searchbox
 searchbox.offButton(event, handler);
+
+// Adds a listener function (handler) to a particular DOM event (event)
+// of the drop down list
+searchbox.onDropDown(event, handler);
+
+// Removes a previously added listener function (handler) of a particular DOM event (event)
+// from the drop down list
+searchbox.offDropDown(event, handler);
 
 ```
 

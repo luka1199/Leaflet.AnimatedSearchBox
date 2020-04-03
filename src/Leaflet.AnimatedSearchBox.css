@@ -1,4 +1,4 @@
-.leaflet-searchbox-container {
+.leaflet-searchbox-wrapper {
     display: flex;
     justify-content: right;
     height: 40px;
@@ -8,56 +8,60 @@
     border-bottom-right-radius: 20px 50%;
 }
 
-.leaflet-searchbox-container .leaflet-searchbox,
-.leaflet-searchbox-container .leaflet-searchbox-button {
+.leaflet-searchbox-wrapper .leaflet-searchbox,
+.leaflet-searchbox-wrapper .leaflet-searchbox-button,
+.leaflet-searchbox-container .leaflet-searchbox-dropdown,
+.leaflet-searchbox-dropdown .leaflet-searchbox-dropdown-item {
     background-color: white;    
     border: 1px rgb(0, 0, 0, 0.3) solid;
     outline: none;
     transition-duration: 0.2s;
 }
 
-.leaflet-searchbox-container .leaflet-searchbox {
+.leaflet-searchbox-wrapper .leaflet-searchbox {
     width: 300px;
     font-size: 17px;
     transition-delay: 0.2s;
+    z-index: 702;
 }
 
-.leaflet-searchbox-container .leaflet-searchbox-left {
+.leaflet-searchbox-wrapper .leaflet-searchbox-left {
     border-top-left-radius: 20px 50%;
     border-bottom-left-radius: 20px 50%;
     border-right: none;
     padding: 0px 0px 0px 15px;
 }
 
-.leaflet-searchbox-container .leaflet-searchbox-right {
+.leaflet-searchbox-wrapper .leaflet-searchbox-right {
     border-top-right-radius: 20px 50%;
     border-bottom-right-radius: 20px 50%;
     border-left: none;
     padding: 0px 15px 0px 0px;
 }
 
-.leaflet-searchbox-container .leaflet-searchbox-button {
+.leaflet-searchbox-wrapper .leaflet-searchbox-button {
     width: 40px;
     transition-delay: 0s;
+    z-index: 702;
 }
 
-.leaflet-searchbox-container .leaflet-searchbox-button:hover {
+.leaflet-searchbox-wrapper .leaflet-searchbox-button:hover {
     cursor: pointer;
 }
 
-.leaflet-searchbox-container .leaflet-searchbox-button-right {
+.leaflet-searchbox-wrapper .leaflet-searchbox-button-right {
     border-top-right-radius: 20px 50%;
     border-bottom-right-radius: 20px 50%;
     border-left: 1px solid #ffffff00;
 }
 
-.leaflet-searchbox-container .leaflet-searchbox-button-left {
+.leaflet-searchbox-wrapper .leaflet-searchbox-button-left {
     border-top-left-radius: 20px 50%;
     border-bottom-left-radius: 20px 50%;
     border-right: 1px solid #ffffff00;
 }
 
-.leaflet-searchbox-container .leaflet-searchbox-button i {
+.leaflet-searchbox-wrapper .leaflet-searchbox-button i {
     font-size: 130%;
 }
 
@@ -66,20 +70,60 @@
     height: auto;
 }
 
-.collapsed>.leaflet-searchbox {
+.leaflet-searchbox-container .leaflet-searchbox-dropdown {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    list-style-type: none;
+    margin: 0px;
+    padding: 20px 0px 0px 0px;
+    background-color: white;
+    border-top: none;
+    z-index: 701;
+}
+
+.leaflet-searchbox-container .leaflet-searchbox-dropdown:empty {
+    display: none;
+}
+
+.leaflet-searchbox-dropdown .leaflet-searchbox-dropdown-item {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    z-index: 701;
+    font-size: 15px;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+
+.leaflet-searchbox-dropdown .leaflet-searchbox-dropdown-item:hover {
+    background-color: #f3f3f3;
+}
+
+.collapsed .leaflet-searchbox {
     width: 0px !important;
     padding: 0px;
     transition-delay: 0s;
 }
 
-.collapsed>.leaflet-searchbox {
+.collapsed .leaflet-searchbox {
     border-left: none;
     border-right: none;
 }
 
-.collapsed>.leaflet-searchbox-button {
+.collapsed .leaflet-searchbox-button {
     border-radius: 50%;
     transition-delay: 0.2s;
     border: 1px rgb(0, 0, 0, 0.3) solid;
 }
 
+.collapsed .leaflet-searchbox-dropdown {
+    display: none;
+}
+
+.leaflet-searchbox-wrapper.open .leaflet-searchbox,
+.leaflet-searchbox-wrapper.open .leaflet-searchbox-button {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}

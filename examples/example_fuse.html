@@ -74,7 +74,8 @@
         var searchbox = L.control.searchbox({
             position: 'topleft',
             expand: 'right',
-            width: '450px'
+            width: '450px',
+            dropDownFeatures: ['setValueOnClick']
         }).addTo(map);
 
         var countries = ["United States", "Canada", "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra",
@@ -124,20 +125,27 @@
             minMatchCharLength: 1
         });
 
-        // Close and clear searchbox 600ms after pressing ENTER in the search box
         searchbox.onInput("keyup", function (e) {
             if (e.keyCode == 13) {
                 search();
+            } else {
+                var value = searchbox.getValue();
+                if (value != "") {
+                    var results = fuse.search(value);
+                    searchbox.setItems(results.map(res => res.item).slice(0, 5));
+                } else {
+                    searchbox.clearItems();
+                }
             }
         });
 
-        // Close and clear searchbox 600ms after clicking the search button
+        
         searchbox.onButton("click", search);
 
         function search() {
             var value = searchbox.getValue();
             if (value != "") {
-                var results = fuse.search(searchbox.getValue());
+                var results = fuse.search(value);
                 $('#results').text(JSON.stringify(results, null, 2));
                 $('html, body').animate({
                     scrollTop: $(".results-container").offset().top

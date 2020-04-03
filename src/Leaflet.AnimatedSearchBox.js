@@ -22,7 +22,8 @@
             expand: 'left',
             collapsed: true,
             width: null,
-            iconPath: 'img/search_icon.png'
+            iconPath: 'img/search_icon.png',
+            dropDownFeatures: ['setValueOnClick']
         },
 
         onAdd: function (map) {
@@ -35,7 +36,14 @@
 
             L.DomEvent.disableClickPropagation(this._container);
 
-            L.DomEvent.on(this._button, "click", this._onClick, this)
+            L.DomEvent.on(this._button, 'click', this._onClick, this);
+
+            // Dropdown behaviour
+            if (this.options.dropDownFeatures.includes('setValueOnClick')) {
+                this.onDropDown('click', function (e) {
+                    this._onListItemClick(e.target);
+                });
+            }
 
             return this._container;
         },
@@ -55,13 +63,16 @@
         },
 
         addItem: function (item) {
-            var listItem = L.DomUtil.create('li', 'leaflet-searchox-dropdown-item', this._container);
+            var listItem = L.DomUtil.create('li', 'leaflet-searchbox-dropdown-item', this._dropDown);
             listItem.textContent = item;
+            this._items.push(listItem);
+
+            L.DomUtil.addClass(this._searchboxWrapper, 'open');
 
             return this
         },
 
-        setItems: function (items) {
+        addItems: function (items) {
             for (var i = 0; i < items.length; i++) {
                 this.addItem(items[i]);
             }
@@ -69,8 +80,18 @@
             return this
         },
 
+        setItems: function (items) {
+            this.clearItems();
+            this.addItems(items);
+
+            return this
+        },
+
         clearItems: function () {
             this._dropDown.innerHTML = '';
+            this._items = [];
+
+            L.DomUtil.removeClass(this._searchboxWrapper, 'open');
 
             return this
         },
@@ -109,8 +130,15 @@
             return L.DomUtil.hasClass(this._container, "collapsed")
         },
 
-        clear: function () {
+        clearInput: function () {
             this._input.value = '';
+
+            return this
+        },
+
+        clear: function () {
+            this.clearInput();
+            this.clearItems();
 
             return this;
         },
@@ -141,11 +169,28 @@
             return this
         },
 
+        onDropDown: function (event, handler) {
+            L.DomEvent.on(this._dropDown, event, handler, this);
+
+            return this
+        },
+
+        offDropDown: function (event, handler) {
+            L.DomEvent.off(this._dropDown, event, handler, this);
+
+            return this
+        },
+
         _onClick: function () {
             if (this._collapsed) {
                 this.show();
                 this._input.focus();
             }
+        },
+
+        _onListItemClick: function (item) {
+            this.setValue(item.innerHTML);
+            this._input.focus();
         },
 
         _buttonHandlerWrapper: function (handler) {
@@ -165,6 +210,8 @@
                 this._container.id = this.options.id;
             }
 
+            this._searchboxWrapper = L.DomUtil.create('div', 'leaflet-searchbox-wrapper', this._container);
+
             if (this.options.expand == 'left') {
                 this._createInput('left');
                 this._createButton('right');
@@ -179,7 +226,7 @@
             this._input = L.DomUtil.create(
                 'input',
                 'leaflet-searchbox leaflet-searchbox-' + position,
-                this._container);
+                this._searchboxWrapper);
             this._input.setAttribute('type', 'text');
             if (this.options.width != null) {
                 this._input.style.width = this.options.width;
@@ -190,7 +237,7 @@
             this._button = L.DomUtil.create(
                 'button',
                 'leaflet-searchbox-button leaflet-searchbox-button-' + position,
-                this._container);
+                this._searchboxWrapper);
             this._button.setAttribute('type', 'button');
             this._button.style.width = this.options.height;
             this._button.style.height = this.options.height;
@@ -201,8 +248,11 @@
         _createDropDown: function () {
             this._dropDown = L.DomUtil.create(
                 'ul',
-                'leafle-searchbox-dropdown',
+                'leaflet-searchbox-dropdown', 
                 this._container);
+
+            this._items = [];
+
         }
     });
 
