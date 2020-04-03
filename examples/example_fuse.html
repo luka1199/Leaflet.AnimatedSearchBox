@@ -74,8 +74,7 @@
         var searchbox = L.control.searchbox({
             position: 'topleft',
             expand: 'right',
-            width: '450px',
-            autocompleteFeatures: ['setValueOnClick']
+            width: '450px'
         }).addTo(map);
 
         var countries = ["United States", "Canada", "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra",
@@ -125,17 +124,11 @@
             minMatchCharLength: 1
         });
 
+        searchbox.setAutocompleteOptions(countries);
+
         searchbox.onInput("keyup", function (e) {
             if (e.keyCode == 13) {
                 search();
-            } else {
-                var value = searchbox.getValue();
-                if (value != "") {
-                    var results = fuse.search(value);
-                    searchbox.setItems(results.map(res => res.item).slice(0, 5));
-                } else {
-                    searchbox.clearItems();
-                }
             }
         });
 
@@ -154,7 +147,7 @@
 
             setTimeout(function () {
                 searchbox.hide();
-                searchbox.clear();
+                searchbox.clearInput();
             }, 600);
         }
     </script>

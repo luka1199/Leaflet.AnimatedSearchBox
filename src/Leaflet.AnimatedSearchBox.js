@@ -22,8 +22,7 @@
             expand: 'left',
             collapsed: true,
             width: null,
-            iconPath: 'img/search_icon.png',
-            autocompleteFeatures: ['setValueOnClick']
+            iconPath: 'img/search_icon.png'
         },
 
         onAdd: function (map) {
@@ -38,20 +37,12 @@
 
             L.DomEvent.on(this._button, 'click', this._onClick, this);
 
-            // Autocomplete behaviour
-            if (this.options.autocompleteFeatures.includes('setValueOnClick')) {
-                this.onAutocomplete('click', function (e) {
-                    this._onListItemClick(e.target);
-                });
-            }
-
             return this._container;
         },
 
         onRemove: function (map) {
 
         },
-
 
         getValue: function () {
             return this._input.value
@@ -62,36 +53,32 @@
             return this
         },
 
-        addItem: function (item) {
-            var listItem = L.DomUtil.create('li', 'leaflet-searchbox-autocomplete-item', this._autocomplete);
-            listItem.textContent = item;
-            this._items.push(listItem);
-
-            L.DomUtil.addClass(this._searchboxWrapper, 'open');
+        addAutocompleteOption: function (option) {
+            var autocompleteOption = L.DomUtil.create('option', 'leaflet-searchbox-autocomplete-item', this._autocomplete);
+            autocompleteOption.value = option;
+            this._autocompleteOptions.push(autocompleteOption);
 
             return this
         },
 
-        addItems: function (items) {
-            for (var i = 0; i < items.length; i++) {
-                this.addItem(items[i]);
+        addAutocompleteOptions: function (options) {
+            for (var i = 0; i < options.length; i++) {
+                this.addAutocompleteOption(options[i]);
             }
 
             return this
         },
 
-        setItems: function (items) {
-            this.clearItems();
-            this.addItems(items);
+        setAutocompleteOptions: function (options) {
+            this.clearAutocomplete();
+            this.addAutocompleteOptions(options);
 
             return this
         },
 
-        clearItems: function () {
+        clearAutocomplete: function () {
             this._autocomplete.innerHTML = '';
-            this._items = [];
-
-            L.DomUtil.removeClass(this._searchboxWrapper, 'open');
+            this._autocompleteOptions = [];
 
             return this
         },
@@ -136,13 +123,6 @@
             return this
         },
 
-        clear: function () {
-            this.clearInput();
-            this.clearItems();
-
-            return this;
-        },
-
         onInput: function (event, handler) {
             L.DomEvent.on(this._input, event, handler, this);
 
@@ -169,28 +149,11 @@
             return this
         },
 
-        onAutocomplete: function (event, handler) {
-            L.DomEvent.on(this._autocomplete, event, handler, this);
-
-            return this
-        },
-
-        offAutocomplete: function (event, handler) {
-            L.DomEvent.off(this._autocomplete, event, handler, this);
-
-            return this
-        },
-
         _onClick: function () {
             if (this._collapsed) {
                 this.show();
                 this._input.focus();
             }
-        },
-
-        _onListItemClick: function (item) {
-            this.setValue(item.innerHTML);
-            this._input.focus();
         },
 
         _buttonHandlerWrapper: function (handler) {
@@ -228,6 +191,7 @@
                 'leaflet-searchbox leaflet-searchbox-' + position,
                 this._searchboxWrapper);
             this._input.setAttribute('type', 'text');
+            this._input.setAttribute('list', 'leaflet-searchbox-autocomplete');
             if (this.options.width != null) {
                 this._input.style.width = this.options.width;
             }
@@ -247,11 +211,12 @@
 
         _createAutocomplete: function () {
             this._autocomplete = L.DomUtil.create(
-                'ul',
+                'datalist',
                 'leaflet-searchbox-autocomplete', 
                 this._container);
+            this._autocomplete.id = 'leaflet-searchbox-autocomplete';
 
-            this._items = [];
+            this._autocompleteOptions = [];
 
         }
     });

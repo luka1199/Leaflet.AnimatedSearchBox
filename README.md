@@ -47,12 +47,6 @@ var searchbox = L.control.searchbox({
 - `class`: Adds custom classes to the container of the searchbox.  
 - `width`: Sets the width of the input field of the searchbox. (Example: `'450px'`)  
 - `iconPath`: Sets the path for the search icon (Default: `'img/search_icon.png'`).
-- `autocompleteFeatures`: Activates the given features (Default: `[]`).  
-Possible features:
-  - `'setValueOnClick'`: Set the value of the searchbox to the value of the clicked autocomplete list item.
-  - `'arrowKeyNavigation'`: Coming soon
-  - `'setValueOnHover'`: Coming soon
-  - `'setValueOnEnter'`: Coming soon
 
 ### Methods
 
@@ -75,23 +69,20 @@ searchbox.getValue()
 // Sets the value of the text field of the search box
 searchbox.setValue(value)
 
-// Adds an item to the autocomplete list
-searchbox.addItem(item)
+// Adds an option to the autocomplete list
+searchbox.addAutocompleteOption(option)
 
-// Adds items to the autocomplete list
-searchbox.addItems(items)
+// Adds options to the autocomplete list
+searchbox.addAutocompleteOption(options)
 
-// Sets items of the autocomplete list
-searchbox.setItems(items)
+// Sets options of the autocomplete list
+searchbox.setAutocompleteOption(options)
 
 // Clears the autocomplete list
-searchbox.clearItems()
+searchbox.clearAutocomplete()
 
 // Clears the text field of the search box
 searchbox.clearInput()
-
-// Clears the text field and the autocomplete list of the search box
-searchbox.clear()
 
 // Adds a listener function (handler) to a particular DOM event (event)
 // of the input field of the searchbox
@@ -108,14 +99,6 @@ searchbox.onButton(event, handler);
 // Removes a previously added listener function (handler) of a particular DOM event (event)
 // from the button of the searchbox
 searchbox.offButton(event, handler);
-
-// Adds a listener function (handler) to a particular DOM event (event)
-// of the autocomplete list
-searchbox.onAutocomplete(event, handler);
-
-// Removes a previously added listener function (handler) of a particular DOM event (event)
-// from the autocomplete list
-searchbox.offAutocomplete(event, handler);
 
 ```
 
