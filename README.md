@@ -8,23 +8,23 @@ A simple Leaflet plugin that provides a collapsible search box.
 
 ## Usage
 
-Include the [`Leaflet.AnimatedSearchBox.css`](https://github.com/luka1199/Leaflet.AnimatedSearchBox/releases/latest/download/Leaflet.AnimatedSearchBox.css
+- Include the [`Leaflet.AnimatedSearchBox.css`](https://github.com/luka1199/Leaflet.AnimatedSearchBox/releases/latest/download/Leaflet.AnimatedSearchBox.css
 ) file in the head section of your document:
 
 ```html
 <link href="src/AnimatedSearchBox.css" rel="stylesheet">
 ```
 
-Include the [`Leaflet.AnimatedSearchBox.js`](https://github.com/luka1199/Leaflet.AnimatedSearchBox/releases/latest/download/Leaflet.AnimatedSearchBox.js
+- Include the [`Leaflet.AnimatedSearchBox.js`](https://github.com/luka1199/Leaflet.AnimatedSearchBox/releases/latest/download/Leaflet.AnimatedSearchBox.js
 ) file in your document:
 
 ```html
 <script src="src/AnimatedSearchBox.css"></script>
 ```
 
-Add the [search icon](https://github.com/luka1199/Leaflet.AnimatedSearchBox/releases/latest/download/search_icon.png) image file to `img/search_icon.png`.
+- Add the [search icon](https://github.com/luka1199/Leaflet.AnimatedSearchBox/releases/latest/download/search_icon.png) image file to `img/search_icon.png`
 
-Create a new `L.Control.Searchbox` and add it to the map:
+- Create a new `L.Control.Searchbox` and add it to the map:
 
 ```javascript
 var searchbox = L.control.searchbox({
