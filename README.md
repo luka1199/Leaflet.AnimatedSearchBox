@@ -121,5 +121,5 @@ searchbox.offAutocomplete(event, handler);
 
 ## Planned features
 
-- More autocomplete features
+- Change autocomplete to `<datalist>`
 - Support for npm etc.
