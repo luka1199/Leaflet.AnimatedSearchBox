@@ -52,13 +52,13 @@
 .leaflet-searchbox-wrapper .leaflet-searchbox-button-right {
     border-top-right-radius: 20px 50%;
     border-bottom-right-radius: 20px 50%;
-    border-left: 1px solid #ffffff00;
+    border-left: none;
 }
 
 .leaflet-searchbox-wrapper .leaflet-searchbox-button-left {
     border-top-left-radius: 20px 50%;
     border-bottom-left-radius: 20px 50%;
-    border-right: 1px solid #ffffff00;
+    border-right: none;
 }
 
 .leaflet-searchbox-wrapper .leaflet-searchbox-button i {
