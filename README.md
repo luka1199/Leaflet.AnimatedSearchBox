@@ -45,8 +45,8 @@ var searchbox = L.control.searchbox({
 - `collapsed`: Sets the initial state of the searchbox (Default: `false`).  
 - `id`: Sets the id of the container of the searchbox.  
 - `class`: Adds custom classes to the container of the searchbox.  
-- `width`: Sets the width of the input field of the searchbox. (Example: `'450px'`)
-- `iconPath`: Sets the path for the search icon (Default: `img/search_icon.png`).
+- `width`: Sets the width of the input field of the searchbox. (Example: `'450px'`)  
+- `iconPath`: Sets the path for the search icon (Default: `'img/search_icon.png'`).
 - `autocompleteFeatures`: Activates the given features (Default: `[]`).  
 Possible features:
   - `'setValueOnClick'`: Set the value of the searchbox to the value of the clicked autocomplete list item.
