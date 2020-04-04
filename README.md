@@ -19,7 +19,7 @@ A simple Leaflet plugin that provides a collapsible search box.
 ) file in your document:
 
 ```html
-<script src="src/AnimatedSearchBox.css"></script>
+<script src="src/AnimatedSearchBox.js"></script>
 ```
 
 - Add the [search icon](https://github.com/luka1199/Leaflet.AnimatedSearchBox/releases/latest/download/search_icon.png) image file to `img/search_icon.png`
