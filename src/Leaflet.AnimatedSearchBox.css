@@ -21,7 +21,7 @@
 .leaflet-searchbox-wrapper .leaflet-searchbox {
     width: 300px;
     font-size: 17px;
-    transition-delay: 0.2s;
+    transition-delay: 0.1s;
     z-index: 702;
 }
 
