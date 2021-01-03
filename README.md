@@ -2,7 +2,7 @@
 
 A simple Leaflet plugin that provides a collapsible search box.
 
-![demo](assets/demo_800px.gif)
+![demo](assets/new_demo_cropped.gif)
 
 ### [Examples](https://luka1199.github.io/Leaflet.AnimatedSearchBox/examples/)
 

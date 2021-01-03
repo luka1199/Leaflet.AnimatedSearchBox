@@ -72,8 +72,8 @@
         }).addTo(map);
 
         var searchbox = L.control.searchbox({
-            position: 'topleft',
-            expand: 'right',
+            position: 'topright',
+            expand: 'left',
             width: '450px',
             autocompleteFeatures: ['setValueOnClick']
         }).addTo(map);
@@ -148,7 +148,7 @@
                 var results = fuse.search(value);
                 $('#results').text(JSON.stringify(results, null, 2));
                 $('html, body').animate({
-                    scrollTop: $(".results-container").offset().top
+                    // scrollTop: $(".results-container").offset().top
                 }, 1000);
             }
 
