@@ -4,10 +4,10 @@ A simple Leaflet plugin that provides a collapsible search box.
 
 ![demo](assets/new_demo_cropped.gif)
 
-### [Examples](https://luka1199.github.io/Leaflet.AnimatedSearchBox/examples/)
+### [Demos](https://luka1199.github.io/Leaflet.AnimatedSearchBox/examples/)
 
-- [Basic Example](https://luka1199.github.io/Leaflet.AnimatedSearchBox/examples/example1.html)
-- [Fuse.js Example](https://luka1199.github.io/Leaflet.AnimatedSearchBox/examples/example_fuse.html)
+- [Basic Demo](https://luka1199.github.io/Leaflet.AnimatedSearchBox/examples/example1.html)
+- [Fuse.js Demo](https://luka1199.github.io/Leaflet.AnimatedSearchBox/examples/example_fuse.html)
 
 ## Usage
 
