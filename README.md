@@ -49,8 +49,9 @@ var searchbox = L.control.searchbox({
 Possible features:
   - `'setValueOnClick'`: Set the value of the searchbox to the value of the clicked autocomplete list item.
   - `'arrowKeyNavigation'`: Coming soon
-  - `'setValueOnHover'`: Coming soon
+  - `'setValueOnHover'`: Set the value of the searchbox to the value hovered on autocomplete list 
   - `'setValueOnEnter'`: Coming soon
+- `clearItemsOnClickItem?`: Sets if autocomplete list is closed when a value is clicked (Default: `false`).  
 
 ### Methods
 
